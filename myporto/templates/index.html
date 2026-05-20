@@ -4,12 +4,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Portofolio Sheren Aulia - Web Developer, Tech Enthusiast, dan Problem Solver.">
+    <meta name="description" content="Portofolio Sheren Aulia">
     <title>Portofolio | Sheren Aulia</title>
     
     <script src="https://cdn.tailwindcss.com"></script>
     
     <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/intersect@3.x.x/dist/cdn.min.js"></script>
+    <!-- Google Fonts: Quicksand & Dancing Script -->
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&family=Dancing+Script:wght@600;700&display=swap" rel="stylesheet">
+    <!-- Devicon for real tech logos -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+    
+    <!-- Alpine.js -->
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 
     <script>
@@ -26,14 +32,24 @@
             }
         }
     </script>
-    <link rel="stylesheet" href="{% static 'style.css' %}?v=1.2">
+    <link rel="stylesheet" href="{% static 'style.css' %}?v=1.11">
     <!-- AOS CSS -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
-<body class="bg-pastelBg text-textMain antialiased selection:bg-accent selection:text-white relative overflow-x-hidden">
-
-    <div class="absolute top-[-10%] left-[-10%] w-96 h-96 bg-pink-300 rounded-full mix-blend-multiply filter blur-[128px] opacity-40 z-0"></div>
-    <div class="absolute bottom-[-10%] right-[-10%] w-96 h-96 bg-rose-300 rounded-full mix-blend-multiply filter blur-[128px] opacity-40 z-0"></div>
+<body class="font-sans overflow-x-hidden text-textMain relative bg-pink-50">
+    <!-- Efek Latar Belakang Pink Sky & Awan Tipis -->
+    <div class="fixed inset-0 z-0 overflow-hidden pointer-events-none bg-gradient-to-b from-pink-300 via-pink-100 to-pink-50">
+        <!-- Awan Tipis (Wispy Clouds) -->
+        <div class="cloud w-96 h-20 top-[10%] opacity-70" style="animation-duration: 45s; animation-delay: 0s;"></div>
+        <div class="cloud w-72 h-16 top-[25%] opacity-50" style="animation-duration: 35s; animation-delay: -15s;"></div>
+        <div class="cloud w-[30rem] h-24 top-[5%] opacity-40" style="animation-duration: 55s; animation-delay: -30s;"></div>
+        <div class="cloud w-80 h-16 top-[40%] opacity-60" style="animation-duration: 40s; animation-delay: -10s;"></div>
+        <div class="cloud w-[40rem] h-28 top-[60%] opacity-30" style="animation-duration: 60s; animation-delay: -40s;"></div>
+        <div class="cloud w-64 h-12 top-[80%] opacity-50" style="animation-duration: 30s; animation-delay: -5s;"></div>
+        
+        <!-- Matahari / Pendaran Cahaya Halus -->
+        <div class="absolute top-[-10%] right-[-10%] w-[50%] h-[50%] bg-white rounded-full mix-blend-overlay filter blur-[100px] opacity-60"></div>
+    </div>
 
     {% include 'navbar.html' %}
     
@@ -43,7 +59,7 @@
     {% include 'proyek.html' %}
     {% include 'kontak.html' %}
 
-    <footer class="py-6 text-center text-textMuted text-sm relative z-10">
+    <footer class="py-3 text-center text-textMuted text-sm relative z-5">
         <p>&copy; 2026 Sheren Aulia Azahra. Build with Django & Tailwind.</p>
     </footer>
 

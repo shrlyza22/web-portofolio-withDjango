@@ -1,13 +1,30 @@
-
-    <section id="keahlian" class="py-24 bg-white/40 relative z-10">
-        <div class="max-w-5xl mx-auto px-4 text-center" data-aos="fade-up">
-            <h2 class="text-4xl font-bold text-textMain mb-2">Keahlian <span class="text-accent">Teknis</span></h2>
-            <div class="w-16 h-1 bg-accent mx-auto rounded-full mb-12"></div>
-            
-            <div class="flex flex-wrap justify-center gap-4">
-                {% for skill in skills %}
-                <span class="px-6 py-3 glass-card rounded-full text-textMain font-semibold hover:text-accent hover:-translate-y-1 transition">{{ skill.icon }} {{ skill.name }}</span>
-                {% endfor %}
+<section id="keahlian" class="py-24 bg-white/40 relative z-10 overflow-hidden">
+        
+    <div class="w-full text-center mb-24" data-aos="fade-up">
+        <h2 class="text-4xl font-bold text-textMain mb-2">Keahlian <span class="text-accent">Teknis</span></h2>
+        <div class="w-16 h-1 bg-accent mx-auto rounded-full mb-12"></div>
+        
+        <div class="marquee-container w-full">
+            <div class="marquee-content flex gap-8 whitespace-nowrap py-4"> 
+                    {% for skill in skills %}
+                    <span class="float-card w-40 h-40 glass-card rounded-3xl text-lg text-textMain font-bold border-2 border-accent/20 flex flex-col justify-center items-center gap-4 hover:!translate-y-[-10px] transition-transform relative {% if forloop.counter|divisibleby:2 %}-top-4{% else %}top-4{% endif %}" 
+                          style="animation-delay: 0.{{ forloop.counter0 }}s;">
+                        <span class="text-6xl icon-wiggle text-accent" style="animation-delay: 0.{{ forloop.counter0 }}s;"><i class="{{ skill.icon }}"></i></span>
+                        <span class="text-center">{{ skill.name }}</span>
+                    </span>
+                    {% endfor %}
+                    
+                    {% for skill in skills %}
+                    <span class="float-card w-40 h-40 glass-card rounded-3xl text-lg text-textMain font-bold border-2 border-accent/20 flex flex-col justify-center items-center gap-4 hover:!translate-y-[-10px] transition-transform relative {% if forloop.counter|divisibleby:2 %}-top-4{% else %}top-4{% endif %}"
+                          style="animation-delay: 0.{{ forloop.counter0 }}s;">
+                        <span class="text-6xl icon-wiggle text-accent" style="animation-delay: 0.{{ forloop.counter0 }}s;"><i class="{{ skill.icon }}"></i></span>
+                        <span class="text-center">{{ skill.name }}</span>
+                    </span>
+                    {% endfor %}
             </div>
         </div>
-    </section>
+    </div>
+
+    <div class="max-w-5xl mx-auto px-4 text-center" data-aos="fade-up">
+        </div>
+</section>

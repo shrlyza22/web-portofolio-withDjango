@@ -9,24 +9,83 @@
             <div class="text-center md:text-left transition-all duration-1000 transform" 
                 :class="shown ? 'opacity-100 scale-100' : 'opacity-0 scale-90'">
                 
-                <h2 class="text-textMuted text-xl font-medium mb-2">Halo, perkenalkan saya</h2>
-                <h1 class="text-5xl md:text-6xl font-bold text-textMain mb-4">Sheren <span class="text-accent">Aulia</span></h1>
+                <div class="mb-2">
+                    <h2 class="text-textMuted text-xl font-medium inline-block border-r-2 border-accent pr-1 animate-pulse" id="typewriter-text"></h2>
+                </div>
+                
+                <div class="inline-block" style="animation-duration: 3s;">
+                    <h1 class="text-7xl md:text-8xl font-bold text-textMain mb-4 flex flex-wrap justify-center md:justify-start" style="font-family: 'Dancing Script', cursive;">
+                        <span class="flex">
+                            <span class="falling-letter" style="animation-delay: 0.2s;">S</span>
+                            <span class="falling-letter" style="animation-delay: 0.4s;">h</span>
+                            <span class="falling-letter" style="animation-delay: 0.6s;">e</span>
+                            <span class="falling-letter" style="animation-delay: 0.8s;">r</span>
+                            <span class="falling-letter" style="animation-delay: 1.0s;">e</span>
+                            <span class="falling-letter" style="animation-delay: 1.2s;">n</span>
+                        </span>
+                        <span class="flex text-accent ml-4">
+                            <span class="falling-letter" style="animation-delay: 1.6s;">A</span>
+                            <span class="falling-letter" style="animation-delay: 1.8s;">u</span>
+                            <span class="falling-letter" style="animation-delay: 2.0s;">l</span>
+                            <span class="falling-letter" style="animation-delay: 2.2s;">i</span>
+                            <span class="falling-letter" style="animation-delay: 2.4s;">a</span>
+                        </span>
+                    </h1>
+                </div>
                 
                 <p class="text-xl md:text-2xl text-textMuted mb-10">
-                    Seorang <span class="text-accent font-semibold">Web Developer • Tech Enthusiast • Problem Solver</span>
+                    Seorang <span class="text-accent font-semibold">IT Student • Tech Enthusiast • Writer & Journalist </span>
                 </p>
-                <a href="#tentang" class="inline-block bg-accent hover:bg-pink-500 text-white font-bold py-3 px-10 rounded-full shadow-lg shadow-pink-300/50 transition duration-300 transform hover:scale-105">
-                    Mulai Kenalan
-                </a>
+                <div class="flex flex-col md:flex-row items-center md:items-start gap-6">
+                    <a href="#tentang" class="inline-block bg-accent hover:bg-pink-500 text-white font-bold py-3 px-10 rounded-full shadow-lg shadow-pink-300/50 transition duration-300 transform hover:scale-105">
+                        Mulai Kenalan
+                    </a>
+                    <div class="flex gap-4 items-center md:h-12">
+                        <a href="mailto:sherenauliaazahra@gmail.com" class="text-textMuted hover:text-[#EA4335] transition-colors duration-300 text-3xl hover:scale-110 transform flex items-center" title="Email Me">
+                            <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="w-[1.2em] h-[1.2em] fill-current inline-block"><path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 0 1 0 19.366V5.457c0-2.023 2.309-3.178 3.927-1.964L5.455 4.64 12 9.548l6.545-4.91 1.528-1.145C21.69 2.28 24 3.434 24 5.457z"/></svg>
+                        </a>
+                        <a href="https://www.linkedin.com/in/shrlyza/" target="_blank" class="text-textMuted hover:text-[#0A66C2] transition-colors duration-300 text-4xl hover:scale-110 transform" title="LinkedIn">
+                            <i class="devicon-linkedin-plain"></i>
+                        </a>
+                        <a href="https://github.com/shrlyza22" target="_blank" class="text-textMuted hover:text-gray-900 transition-colors duration-300 text-4xl hover:scale-110 transform" title="GitHub">
+                            <i class="devicon-github-original"></i>
+                        </a>
+                    </div>
+                </div>
             </div>
 
             <div class="flex justify-center md:justify-end transition-all duration-1000 delay-300 transform"
                 :class="shown ? 'opacity-100 scale-100' : 'opacity-0 scale-90'">
-                <div class="w-full max-w-sm md:max-w-md aspect-square flex items-center justify-center">
-                    <img src="{% static 'img/foto 4.jpg' %}" alt="Sheren Aulia" class="shape-blob w-full h-full object-cover border-4 border-white/80">
+                <div class="relative w-full max-w-sm md:max-w-md aspect-square flex items-center justify-center p-4">
+                    <!-- Bingkai Cantik Animasi -->
+                    <div class="absolute inset-0 rounded-full border-[6px] border-dashed border-pink-300 animate-[spin_15s_linear_infinite] opacity-60 z-0"></div>
+                    <div class="absolute inset-2 rounded-[40%_60%_70%_30%/40%_50%_60%_50%] border-[6px] border-pink-200 animate-[spin_20s_linear_infinite_reverse] opacity-60 z-0"></div>
+                    
+                    <img src="{% static 'img/profile.jpg' %}" alt="Sheren Aulia" class="shape-blob w-full h-full object-cover relative z-10 border-4 border-white shadow-[0_0_30px_rgba(244,114,182,0.4)]">
                 </div>
             </div>
 
         </div>
     </div>
 </section>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const text = "Halo, Perkenalkan Aku 👋";
+    let index = 0;
+    const element = document.getElementById("typewriter-text");
+    function typeWriter() {
+        if (index < text.length) {
+            element.innerHTML += text.charAt(index);
+            index++;
+            setTimeout(typeWriter, 100);
+        } else {
+            // Hilangkan kursor berkedip setelah selesai
+            setTimeout(() => {
+                element.classList.remove("border-r-2", "border-accent", "animate-pulse");
+            }, 2000);
+        }
+    }
+    setTimeout(typeWriter, 500); // Jeda sebelum mulai ngetik
+});
+</script>

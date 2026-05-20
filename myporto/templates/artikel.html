@@ -1,0 +1,25 @@
+    <section id="artikel" class="py-24 bg-white/40 relative z-10">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl font-bold text-textMain mb-2">Artikel & <span class="text-accent">Publikasi</span></h2>
+                <div class="w-16 h-1 bg-accent mx-auto rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {% for article in articles %}
+                <a href="https://island-blue-bea.notion.site/Pencarian-Diri-di-Tengah-Khalayak-30a738de83a68035ba20d2e08b290bf4" target="_blank" class="block bg-white rounded-2xl p-8 border-t-8 border-accent shadow-lg shadow-pink-100 hover:-translate-y-2 transition-transform duration-300 group">
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="text-xs font-bold uppercase tracking-wider text-accent bg-pink-100 px-3 py-1 rounded-full">{{ article.publisher }}</span>
+                        {% if article.date_published %}
+                        <span class="text-textMuted text-xs">{{ article.date_published|date:"d M Y" }}</span>
+                        {% endif %}
+                    </div>
+                    <h3 class="text-xl font-bold text-textMain group-hover:text-accent transition-colors">{{ article.title }}</h3>
+                    <div class="mt-6 flex items-center text-sm text-textMuted group-hover:text-accent transition-colors font-medium">
+                        Baca Selengkapnya <span class="ml-2">→</span>
+                    </div>
+                </a>
+                {% endfor %}
+            </div>
+        </div>
+    </section>

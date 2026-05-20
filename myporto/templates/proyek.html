@@ -11,6 +11,11 @@
                     <div class="h-40 bg-pink-100/70 rounded-xl mb-6 flex items-center justify-center text-4xl">{{ project.icon }}</div>
                     <h3 class="text-xl font-bold text-textMain mb-3">{{ project.title }}</h3>
                     <p class="text-textMuted text-sm mb-4">{{ project.description }}</p>
+                    {% if project.repo_link %}
+                    <a href="{{ project.repo_link }}" target="_blank" class="inline-flex items-center gap-2 text-accent font-semibold hover:text-pink-600 transition-colors">
+                        <i class="devicon-github-original"></i> Lihat Source Code
+                    </a>
+                    {% endif %}
                 </div>
                 {% endfor %}
             </div>

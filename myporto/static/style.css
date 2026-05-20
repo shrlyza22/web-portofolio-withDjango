@@ -19,15 +19,13 @@
     animation: textPulse 3s ease-in-out infinite;
 }
 
-/* 2. Animasi Ubur-Ubur: Floating (Mengambang) */
+/* 2. Animasi Ubur-Ubur: Realistic Swimming */
 @keyframes floatJelly {
-    0%, 100% {
-        transform: translateY(0px) rotate(0deg);
-    }
-    /* Di tengah animasi (bob up), ubur-ubur naik 10px dan sedikit berayun */
-    50% {
-        transform: translateY(-10px) rotate(2deg); 
-    }
+    0% { transform: translateY(0) scaleY(1) scaleX(1); }
+    15% { transform: translateY(2px) scaleY(0.95) scaleX(1.05); } /* Persiapan dorongan (squish) */
+    30% { transform: translateY(-12px) scaleY(1.1) scaleX(0.9); } /* Dorongan ke atas yang cepat (stretch) */
+    60% { transform: translateY(-5px) scaleY(0.98) scaleX(1.02); } /* Melayang/meluncur turun perlahan */
+    100% { transform: translateY(0) scaleY(1) scaleX(1); } /* Kembali ke posisi semula */
 }
 
 .jelly-float {
@@ -35,6 +33,7 @@
        '3s' -> Durasi animasi (3 detik), lambat biar santai
        'ease-in-out' -> Gerakannya lembut di awal dan akhir
        'infinite' -> Animasi looping terus tanpa henti
+    */
     animation: floatJelly 3s ease-in-out infinite;
 }
 
@@ -51,6 +50,24 @@
 .text-float {
     animation: floatText 3s ease-in-out infinite;
     display: inline-block;
+}
+
+/* 1. Reset & General Styles */
+html {
+    scroll-behavior: smooth;
+    /* Tambahan opsional: mencegah scroll horizontal bocor karena marquee 100vw */
+    overflow-x: hidden; 
+}
+
+body {
+    background-color: #fce4ec; /* Pink Pastel Background */
+    background-image: 
+        radial-gradient(at 0% 0%, rgba(255, 182, 193, 0.3) 0px, transparent 50%),
+        radial-gradient(at 100% 100%, rgba(135, 206, 235, 0.3) 0px, transparent 50%);
+    background-attachment: fixed;
+    font-family: 'Quicksand', sans-serif;
+    /* Tambahan opsional: mencegah scroll horizontal bocor karena marquee 100vw */
+    overflow-x: hidden;
 }
 
 /* 4. Glassmorphism */
@@ -75,4 +92,133 @@
     animation: morph 8s ease-in-out infinite;
     /* Soft glowing shadow untuk menambah kesan pastel/premium */
     box-shadow: 0 10px 30px -10px rgba(244, 114, 182, 0.5);
-}
+}
+
+/* 6. Marquee Animation */
+.marquee-container {
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    overflow: hidden;
+    padding: 2rem 0;
+    border-top: 2px solid #f472b6;
+    border-bottom: 2px solid #f472b6;
+    background: rgba(255, 255, 255, 0.4);
+}
+
+.marquee-content {
+    display: flex;
+    width: max-content;
+    animation: marquee 25s linear infinite;
+}
+
+.marquee-container:hover .marquee-content {
+    animation-play-state: paused;
+}
+
+@keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+/* 7. Icon Wiggle Animation */
+@keyframes wiggle {
+    0%, 100% { transform: rotate(-10deg) translateY(0); }
+    50% { transform: rotate(10deg) translateY(-5px); }
+}
+
+.icon-wiggle {
+    display: inline-block;
+    animation: wiggle 2s ease-in-out infinite;
+}
+
+/* 8. Card Float Animation */
+@keyframes floatCard {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-12px); }
+}
+
+.float-card {
+    animation: floatCard 3s ease-in-out infinite;
+}
+
+/* 9. Cloud Animation */
+@keyframes moveClouds {
+    0% { left: 110%; }
+    100% { left: -30%; }
+}
+
+.cloud {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 9999px;
+    filter: blur(12px);
+    animation: moveClouds linear infinite;
+}
+
+/* 10. Letter Bounce for Logo */
+@keyframes letterBounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+}
+
+.letter-bounce {
+    display: inline-block;
+    animation: letterBounce 1.5s ease-in-out infinite;
+}
+
+/* 11. Falling Letter Animation */
+@keyframes fallDown {
+    0% { transform: translateY(-50px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+}
+
+.falling-letter {
+    display: inline-block;
+    opacity: 0;
+    animation: fallDown 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+/* 12. Letter Blur In Animation */
+@keyframes letterBlurIn {
+    0% { filter: blur(8px); opacity: 0; }
+    100% { filter: blur(0); opacity: 1; }
+}
+
+.letter-blur-in {
+    display: inline-block;
+    opacity: 0;
+}
+
+.start-blur-anim .letter-blur-in {
+    animation: letterBlurIn 0.3s forwards;
+}
+
+/* 13. Shimmer/Sparkle Effect for Button */
+.btn-shimmer {
+    position: relative;
+    overflow: hidden;
+}
+.btn-shimmer::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+        to right,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.4) 50%,
+        rgba(255, 255, 255, 0) 100%
+    );
+    transform: rotate(30deg);
+    animation: shimmer 3s infinite linear;
+}
+@keyframes shimmer {
+    0% { transform: translateX(-100%) rotate(30deg); }
+    100% { transform: translateX(100%) rotate(30deg); }
+}

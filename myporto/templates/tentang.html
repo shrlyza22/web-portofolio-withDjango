@@ -1,14 +1,74 @@
-<section id="tentang" class="py-24 relative z-10">
-    <div class="max-w-4xl mx-auto px-4 text-center" data-aos="fade-up">
+<section id="tentang" 
+        x-data="{ shown: false }" 
+        x-intersect.once="shown = true" 
+        class="py-24 relative z-10 transition-all duration-1000 transform"
+        :class="shown ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'">
+    
+    <div class="max-w-4xl mx-auto px-4 text-center">
         <h2 class="text-4xl font-bold text-textMain mb-2">Tentang <span class="text-accent">Saya</span></h2>
-        <div class="w-16 h-1 bg-accent mx-auto rounded-full mb-8"></div>
-        <div class="glass-card rounded-3xl p-8 md:p-12 text-left md:text-center shadow-lg">
-            <p class="text-textMuted text-lg leading-relaxed mb-6">
-                Halo! Saya Sheren Aulia, seorang pengembang web yang antusias dengan teknologi terbaru. Saya senang memecahkan masalah yang kompleks dan mengubahnya menjadi antarmuka desain yang sederhana, indah, dan intuitif.
-            </p>
-            <p class="text-textMuted text-lg leading-relaxed">
-                Saat tidak sedang coding, Anda akan menemukan saya sedang mempelajari hal-hal baru tentang dunia teknologi, membaca buku, atau mencari inspirasi desain web yang kekinian.
-            </p>
+        <div class="w-16 h-1 bg-accent mx-auto rounded-full mb-10"></div>
+        
+        <div class="glass-card rounded-3xl p-8 md:p-12 text-left md:text-justify">
+            <div id="tentang-container">
+                <p class="text-textMuted text-lg leading-relaxed mb-6">
+                    Sebagai mahasiswi S1 Teknologi Informasi, saya antusias memadukan logika pemrograman, infrastruktur jaringan, dan inovasi teknologi untuk menciptakan solusi digital yang berdampak.
+                </p>
+                <p class="text-textMuted text-lg leading-relaxed mb-8">
+                    Bagi saya, inovasi terbaik lahir dari pemahaman sistem yang utuh (<em>end-to-end</em>). Oleh karena itu, saya sangat menikmati tantangan menjembatani dunia <em>software</em> dan <em>hardware</em> mulai dari membangun arsitektur <em>backend</em>, mengelola infrastruktur server, hingga bereksperimen di level mikrokontroler.
+                </p>
+            </div>
+            
+            <div class="mt-8 transition-all duration-1000 delay-700 transform flex justify-center w-full"
+                 :class="shown ? 'scale-100 opacity-100' : 'scale-50 opacity-0'">
+                <a href="#" class="btn-shimmer inline-flex items-center gap-3 bg-white border-2 border-accent text-accent hover:bg-accent hover:text-white font-bold py-3 px-8 rounded-full shadow-lg shadow-pink-300/50 transition duration-300 transform hover:-translate-y-1">
+                    📄 Unduh Curriculum Vitae
+                </a>
+            </div>
         </div>
     </div>
 </section>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const container = document.getElementById('tentang-container');
+    let globalDelay = 0;
+    
+    function processNode(node) {
+        if (node.nodeType === Node.TEXT_NODE) {
+            const text = node.textContent;
+            if (text.trim().length === 0) return; // Skip empty whitespace nodes
+            
+            const fragment = document.createDocumentFragment();
+            for (let i = 0; i < text.length; i++) {
+                const span = document.createElement('span');
+                span.textContent = text[i] === ' ' ? '\u00A0' : text[i];
+                // Jangan animasikan spasi kosong beruntun secara berlebihan
+                if (text[i] !== '\n') {
+                    span.className = 'letter-blur-in';
+                    span.style.animationDelay = `${globalDelay}s`;
+                    globalDelay += 0.008; // Jeda 8ms per huruf (dipercepat)
+                }
+                fragment.appendChild(span);
+            }
+            node.parentNode.replaceChild(fragment, node);
+        } else if (node.nodeType === Node.ELEMENT_NODE) {
+            Array.from(node.childNodes).forEach(processNode);
+        }
+    }
+    
+    // Simpan clone untuk diproses agar tidak merusak loop
+    const paragraphs = Array.from(container.querySelectorAll('p'));
+    paragraphs.forEach(p => {
+        Array.from(p.childNodes).forEach(processNode);
+    });
+
+    const observer = new IntersectionObserver((entries) => {
+        if (entries[0].isIntersecting) {
+            container.classList.add('start-blur-anim');
+            observer.disconnect();
+        }
+    }, { threshold: 0.1 });
+    
+    observer.observe(container);
+});
+</script>

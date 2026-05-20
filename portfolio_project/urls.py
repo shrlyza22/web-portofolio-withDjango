@@ -16,9 +16,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django_distill import distill_path
 from myporto import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.home, name='home'),
+    distill_path('', views.home, name='home', distill_file='index.html'),
 ]
