@@ -1,0 +1,13 @@
+
+    <section id="keahlian" class="py-24 bg-white/40 relative z-10">
+        <div class="max-w-5xl mx-auto px-4 text-center" data-aos="fade-up">
+            <h2 class="text-4xl font-bold text-textMain mb-2">Keahlian <span class="text-accent">Teknis</span></h2>
+            <div class="w-16 h-1 bg-accent mx-auto rounded-full mb-12"></div>
+            
+            <div class="flex flex-wrap justify-center gap-4">
+                {% for skill in skills %}
+                <span class="px-6 py-3 glass-card rounded-full text-textMain font-semibold hover:text-accent hover:-translate-y-1 transition">{{ skill.icon }} {{ skill.name }}</span>
+                {% endfor %}
+            </div>
+        </div>
+    </section>

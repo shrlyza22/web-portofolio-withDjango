@@ -1,0 +1,17 @@
+# Mengabaikan folder Virtual Environment
+venv/
+env/
+ENV/
+
+# Mengabaikan cache Python
+__pycache__/
+*.pyc
+
+# Mengabaikan database lokal (biar data testing kamu nggak bocor)
+db.sqlite3
+
+# Mengabaikan file rahasia (kalau nanti kamu pakai .env)
+.env
+
+# Mengabaikan folder cache sistem operasi
+.DS_Store

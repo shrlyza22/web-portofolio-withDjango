@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="30 20 240 310" width="60" height="78">
+  <defs>
+    <style>
+      .t1 { animation: wave-odd  2.4s ease-in-out infinite 0.0s; transform-origin: 95px  248px; }
+      .t2 { animation: wave-even 2.4s ease-in-out infinite 0.2s; transform-origin: 117px 252px; }
+      .t3 { animation: wave-odd  2.4s ease-in-out infinite 0.4s; transform-origin: 140px 254px; }
+      .t4 { animation: wave-even 2.4s ease-in-out infinite 0.2s; transform-origin: 163px 252px; }
+      .t5 { animation: wave-odd  2.4s ease-in-out infinite 0.0s; transform-origin: 185px 248px; }
+
+      .body { animation: float 3.6s ease-in-out infinite; transform-origin: 150px 140px; }
+
+      @keyframes wave-odd {
+        0%,100% { transform: rotate(-18deg); }
+        50%      { transform: rotate(12deg);  }
+      }
+      @keyframes wave-even {
+        0%,100% { transform: rotate(18deg);  }
+        50%      { transform: rotate(-12deg); }
+      }
+      @keyframes float {
+        0%,100% { transform: translateY(0px);  }
+        50%      { transform: translateY(-6px); }
+      }
+    </style>
+  </defs>
+
+  <!-- TENTAKEL -->
+  <g class="t1">
+    <rect x="89"  y="248" width="14" height="72" rx="7" fill="#ADCE3B"/>
+    <ellipse cx="96"  cy="323" rx="9" ry="8" fill="#ADCE3B"/>
+  </g>
+  <g class="t2">
+    <rect x="111" y="252" width="14" height="76" rx="7" fill="#ADCE3B"/>
+    <ellipse cx="118" cy="331" rx="9" ry="8" fill="#ADCE3B"/>
+  </g>
+  <g class="t3">
+    <rect x="134" y="254" width="14" height="80" rx="7" fill="#ADCE3B"/>
+    <ellipse cx="141" cy="337" rx="9" ry="8" fill="#ADCE3B"/>
+  </g>
+  <g class="t4">
+    <rect x="157" y="252" width="14" height="76" rx="7" fill="#ADCE3B"/>
+    <ellipse cx="164" cy="331" rx="9" ry="8" fill="#ADCE3B"/>
+  </g>
+  <g class="t5">
+    <rect x="179" y="248" width="14" height="72" rx="7" fill="#ADCE3B"/>
+    <ellipse cx="186" cy="323" rx="9" ry="8" fill="#ADCE3B"/>
+  </g>
+
+  <!-- TUBUH -->
+  <g class="body">
+    <ellipse cx="150" cy="145" rx="108" ry="100" fill="#F4A9C4" opacity="0.28"/>
+    <ellipse cx="150" cy="145" rx="100" ry="93"  fill="#F472A8"/>
+    <ellipse cx="122" cy="112" rx="34"  ry="28"  fill="#FBBDCF" opacity="0.65"/>
+    <ellipse cx="150" cy="228" rx="84"  ry="22"  fill="#E8608A" opacity="0.55"/>
+    <ellipse cx="115" cy="152" rx="28" ry="30" fill="#3B1524"/>
+    <ellipse cx="185" cy="152" rx="28" ry="30" fill="#3B1524"/>
+    <ellipse cx="124" cy="140" rx="8"  ry="10" fill="white" opacity="0.92"/>
+    <ellipse cx="194" cy="140" rx="8"  ry="10" fill="white" opacity="0.92"/>
+    <path d="M127 196 Q150 212 173 196" stroke="#3B1524" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+    <g transform="translate(228, 72)">
+      <ellipse cx="0" cy="-14" rx="10" ry="13" fill="#FFFAC8" transform="rotate(0)"/>
+      <ellipse cx="0" cy="-14" rx="10" ry="13" fill="#FFFAC8" transform="rotate(72)"/>
+      <ellipse cx="0" cy="-14" rx="10" ry="13" fill="#FFFAC8" transform="rotate(144)"/>
+      <ellipse cx="0" cy="-14" rx="10" ry="13" fill="#FFFAC8" transform="rotate(216)"/>
+      <ellipse cx="0" cy="-14" rx="10" ry="13" fill="#FFFAC8" transform="rotate(288)"/>
+      <circle cx="0" cy="0" r="11" fill="#3B1524"/>
+    </g>
+  </g>
+</svg>
