@@ -1,22 +1,21 @@
 /* --- Tambahan Animasi untuk Navbar --- */
 
-/* 1. Animasi Teks: Pulsating (Berpendar) */
-@keyframes textPulse {
-    0%, 100% {
-        color: #f472b6; /* Warna accent pink pastel */
-    }
-    50% {
-        color: #a855f7; /* Warna ungu pastel yang halus */
-    }
+/* 1. Animasi Teks Logo: Gradient Shift */
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
 
 .navbar-logo-accent {
-    /* 'textPulse' -> Nama keyframe yang dipakai
-       '3s' -> Durasi animasi (3 detik), lambat biar santai
-       'ease-in-out' -> Gerakannya lembut di awal dan akhir
-       'infinite' -> Animasi looping terus tanpa henti
-    */
-    animation: textPulse 3s ease-in-out infinite;
+    background: linear-gradient(270deg, #f472b6, #a855f7, #3b82f6, #f472b6);
+    background-size: 300% 300%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientShift 5s ease infinite;
+    display: inline-block;
+    /* Efek glow tipis di belakangnya */
+    filter: drop-shadow(0 0 8px rgba(244, 114, 182, 0.5));
 }
 
 /* 2. Animasi Ubur-Ubur: Realistic Swimming */
