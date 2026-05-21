@@ -18,7 +18,7 @@ xcopy staticfiles\* docs\static\ /s /e /y /q >nul
 
 echo.
 echo 4. Memperbaiki link rusak agar cocok dengan GitHub Pages...
-powershell -Command "(Get-Content docs\index.html) -replace '\"/static/', '\"static/' | Set-Content docs\index.html"
+powershell -Command "(Get-Content docs\index.html) -replace '\"/static/', '\"/web-portofolio-withDjango/static/' | Set-Content docs\index.html"
 
 echo.
 echo =======================================
