@@ -1,25 +1,32 @@
+{% load static %}
 <section id="tentang" 
         x-data="{ shown: false }" 
         x-intersect.once="shown = true" 
-        class="py-24 relative z-10 transition-all duration-1000 transform"
+        class="py-24 scroll-mt-24 relative z-10 transition-all duration-1000 transform"
         :class="shown ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'">
     
     <div class="max-w-4xl mx-auto px-4 text-center">
         <h2 class="text-4xl font-bold text-textMain mb-2">Tentang <span class="text-accent">Saya</span></h2>
         <div class="w-16 h-1 bg-accent mx-auto rounded-full mb-10"></div>
         
-        <div class="glass-card rounded-3xl p-8 md:p-12 text-left md:text-justify">
+        <div class="glass-card rounded-3xl p-8 md:p-12 text-left md:text-justify shadow-lg relative z-10">
             <div id="tentang-container">
                 <p class="text-textMuted text-lg leading-relaxed mb-6">
-                    Sebagai mahasiswi S1 Teknologi Informasi, saya antusias memadukan logika pemrograman, infrastruktur jaringan, dan inovasi teknologi untuk menciptakan solusi digital yang berdampak.
+                    Saya <strong>Sheren Aulia Azahra</strong>, mahasiswa aktif S1 <strong>Teknologi Informasi</strong> di <strong>Telkom University</strong>. Didorong oleh rasa ingin tahu yang mendalam, saya sangat antusias mengeksplorasi arsitektur jaringan, infrastruktur modern, dan teknologi terkini.
                 </p>
                 <p class="text-textMuted text-lg leading-relaxed mb-8">
-                    Bagi saya, inovasi terbaik lahir dari pemahaman sistem yang utuh (<em>end-to-end</em>). Oleh karena itu, saya sangat menikmati tantangan menjembatani dunia <em>software</em> dan <em>hardware</em> mulai dari membangun arsitektur <em>backend</em>, mengelola infrastruktur server, hingga bereksperimen di level mikrokontroler.
+                    Minat utama saya berpusat pada <strong>Networking dan DevOps</strong>, khususnya dalam pemanfaatan <strong>Software-Defined Networking (SDN)</strong> serta teknologi Cloud. Bagi saya, ini adalah ruang yang tepat untuk mengaplikasikan kemampuan teknis dan analitis guna membangun infrastruktur sistem yang andal dan efisien.
                 </p>
             </div>
             
-            <div class="mt-8 transition-all duration-1000 delay-700 transform flex justify-center w-full"
-                 :class="shown ? 'scale-100 opacity-100' : 'scale-50 opacity-0'">
+            <div class="mt-8 transition-all duration-1000 delay-700 transform flex flex-col sm:flex-row justify-center gap-4 w-full"
+                :class="shown ? 'scale-100 opacity-100' : 'scale-50 opacity-0'">
+                <a href="{% static 'assets/cv.pdf' %}" target="_blank" class="btn-shimmer inline-flex items-center justify-center gap-2 bg-white text-accent font-bold py-3 px-8 rounded-full shadow-lg hover:shadow-pink-300/50 transition duration-300 transform hover:-translate-y-1">
+                    📄 Unduh Curriculum Vitae
+                </a>
+                <a href="{% static 'assets/portopdf.pdf' %}" target="_blank" class="btn-shimmer inline-flex items-center justify-center gap-2 bg-accent text-white font-bold py-3 px-8 rounded-full shadow-lg hover:shadow-pink-300/50 transition duration-300 transform hover:-translate-y-1">
+                    📊 Unduh Portofolio (PPT)
+                </a>
             </div>
         </div>
     </div>
@@ -38,12 +45,16 @@ document.addEventListener("DOMContentLoaded", function() {
             const fragment = document.createDocumentFragment();
             for (let i = 0; i < text.length; i++) {
                 const span = document.createElement('span');
-                span.textContent = text[i] === ' ' ? '\u00A0' : text[i];
+                // Gunakan spasi normal agar text-justify bisa bekerja meregangkan spasi
+                span.textContent = text[i];
                 // Jangan animasikan spasi kosong beruntun secara berlebihan
-                if (text[i] !== '\n') {
-                    span.className = 'letter-blur-in';
+                if (text[i] !== '\n' && text[i] !== ' ') {
+                    span.className = 'letter-blur-in inline-block';
                     span.style.animationDelay = `${globalDelay}s`;
                     globalDelay += 0.008; // Jeda 8ms per huruf (dipercepat)
+                } else if (text[i] === ' ') {
+                    // Beri class untuk spasi normal agar ukurannya tidak hilang
+                    span.className = 'inline';
                 }
                 fragment.appendChild(span);
             }

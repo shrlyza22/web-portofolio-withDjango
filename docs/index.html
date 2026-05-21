@@ -67,6 +67,7 @@
         <ul class="hidden md:flex space-x-6 text-sm font-semibold">
             <li><a href="#home" class="hover:text-accent transition duration-300">Beranda</a></li>
             <li><a href="#tentang" class="hover:text-accent transition duration-300">Tentang Saya</a></li>
+            <li><a href="#pendidikan" class="hover:text-accent transition duration-300">Pendidikan</a></li>
             <li><a href="#keahlian" class="hover:text-accent transition duration-300">Keahlian</a></li>
             <li><a href="#proyek" class="hover:text-accent transition duration-300">Proyek</a></li>
             <li><a href="#kontak" class="hover:text-accent transition duration-300">Kontak</a></li>
@@ -87,6 +88,7 @@
         <ul class="flex flex-col space-y-4 px-4 py-6 text-sm font-semibold text-center">
             <li><a @click="open = false" href="#home" class="block hover:text-accent transition duration-300">Beranda</a></li>
             <li><a @click="open = false" href="#tentang" class="block hover:text-accent transition duration-300">Tentang Saya</a></li>
+            <li><a @click="open = false" href="#pendidikan" class="block hover:text-accent transition duration-300">Pendidikan</a></li>
             <li><a @click="open = false" href="#keahlian" class="block hover:text-accent transition duration-300">Keahlian</a></li>
             <li><a @click="open = false" href="#proyek" class="block hover:text-accent transition duration-300">Proyek</a></li>
             <li><a @click="open = false" href="#kontak" class="block hover:text-accent transition duration-300">Kontak</a></li>
@@ -130,7 +132,7 @@
                 </div>
                 
                 <p class="text-lg sm:text-xl md:text-2xl text-textMuted mb-8 md:mb-10 text-center md:text-left px-4 md:px-0">
-                    Seorang <span class="text-accent font-semibold block sm:inline mt-2 sm:mt-0">IT Student • Tech Enthusiast • Writer & Journalist</span>
+                    Seorang mahasiswa Teknologi Informasi dengan minat mendalam pada eksplorasi infrastruktur jaringan modern.<span class="text-accent font-semibold block sm:inline mt-2 sm:mt-0"> Berfokus pada inovasi dan implementasi Software-Defined Networking (SDN) serta ekosistem Cloud-Native.</span>
                 </p>
                 <div class="flex flex-col md:flex-row items-center md:items-start gap-6">
                     <a href="#tentang" class="inline-block bg-accent hover:bg-pink-500 text-white font-bold py-3 px-10 rounded-full shadow-lg shadow-pink-300/50 transition duration-300 transform hover:scale-105">
@@ -185,28 +187,35 @@ document.addEventListener("DOMContentLoaded", function() {
     setTimeout(typeWriter, 500); // Jeda sebelum mulai ngetik
 });
 </script>
-    <section id="tentang" 
+    
+<section id="tentang" 
         x-data="{ shown: false }" 
         x-intersect.once="shown = true" 
-        class="py-24 relative z-10 transition-all duration-1000 transform"
+        class="py-24 scroll-mt-24 relative z-10 transition-all duration-1000 transform"
         :class="shown ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'">
     
     <div class="max-w-4xl mx-auto px-4 text-center">
         <h2 class="text-4xl font-bold text-textMain mb-2">Tentang <span class="text-accent">Saya</span></h2>
         <div class="w-16 h-1 bg-accent mx-auto rounded-full mb-10"></div>
         
-        <div class="glass-card rounded-3xl p-8 md:p-12 text-left md:text-justify">
+        <div class="glass-card rounded-3xl p-8 md:p-12 text-left md:text-justify shadow-lg relative z-10">
             <div id="tentang-container">
                 <p class="text-textMuted text-lg leading-relaxed mb-6">
-                    Sebagai mahasiswi S1 Teknologi Informasi, saya antusias memadukan logika pemrograman, infrastruktur jaringan, dan inovasi teknologi untuk menciptakan solusi digital yang berdampak.
+                    Saya <strong>Sheren Aulia Azahra</strong>, mahasiswa aktif S1 <strong>Teknologi Informasi</strong> di <strong>Telkom University</strong>. Didorong oleh rasa ingin tahu yang mendalam, saya sangat antusias mengeksplorasi arsitektur jaringan, infrastruktur modern, dan teknologi terkini.
                 </p>
                 <p class="text-textMuted text-lg leading-relaxed mb-8">
-                    Bagi saya, inovasi terbaik lahir dari pemahaman sistem yang utuh (<em>end-to-end</em>). Oleh karena itu, saya sangat menikmati tantangan menjembatani dunia <em>software</em> dan <em>hardware</em> mulai dari membangun arsitektur <em>backend</em>, mengelola infrastruktur server, hingga bereksperimen di level mikrokontroler.
+                    Minat utama saya berpusat pada <strong>Networking dan DevOps</strong>, khususnya dalam pemanfaatan <strong>Software-Defined Networking (SDN)</strong> serta teknologi Cloud. Bagi saya, ini adalah ruang yang tepat untuk mengaplikasikan kemampuan teknis dan analitis guna membangun infrastruktur sistem yang andal dan efisien.
                 </p>
             </div>
             
-            <div class="mt-8 transition-all duration-1000 delay-700 transform flex justify-center w-full"
-                 :class="shown ? 'scale-100 opacity-100' : 'scale-50 opacity-0'">
+            <div class="mt-8 transition-all duration-1000 delay-700 transform flex flex-col sm:flex-row justify-center gap-4 w-full"
+                :class="shown ? 'scale-100 opacity-100' : 'scale-50 opacity-0'">
+                <a href="/web-portofolio-withDjango/static/assets/cv.pdf" target="_blank" class="btn-shimmer inline-flex items-center justify-center gap-2 bg-white text-accent font-bold py-3 px-8 rounded-full shadow-lg hover:shadow-pink-300/50 transition duration-300 transform hover:-translate-y-1">
+                    📄 Unduh Curriculum Vitae
+                </a>
+                <a href="/web-portofolio-withDjango/static/assets/portopdf.pdf" target="_blank" class="btn-shimmer inline-flex items-center justify-center gap-2 bg-accent text-white font-bold py-3 px-8 rounded-full shadow-lg hover:shadow-pink-300/50 transition duration-300 transform hover:-translate-y-1">
+                    📊 Unduh Portofolio (PPT)
+                </a>
             </div>
         </div>
     </div>
@@ -225,12 +234,16 @@ document.addEventListener("DOMContentLoaded", function() {
             const fragment = document.createDocumentFragment();
             for (let i = 0; i < text.length; i++) {
                 const span = document.createElement('span');
-                span.textContent = text[i] === ' ' ? '\u00A0' : text[i];
+                // Gunakan spasi normal agar text-justify bisa bekerja meregangkan spasi
+                span.textContent = text[i];
                 // Jangan animasikan spasi kosong beruntun secara berlebihan
-                if (text[i] !== '\n') {
-                    span.className = 'letter-blur-in';
+                if (text[i] !== '\n' && text[i] !== ' ') {
+                    span.className = 'letter-blur-in inline-block';
                     span.style.animationDelay = `${globalDelay}s`;
                     globalDelay += 0.008; // Jeda 8ms per huruf (dipercepat)
+                } else if (text[i] === ' ') {
+                    // Beri class untuk spasi normal agar ukurannya tidak hilang
+                    span.className = 'inline';
                 }
                 fragment.appendChild(span);
             }
@@ -256,109 +269,99 @@ document.addEventListener("DOMContentLoaded", function() {
     observer.observe(container);
 });
 </script>
-    <section id="keahlian" class="py-24 bg-white/40 relative z-10 overflow-hidden" data-aos="fade-right" data-aos-duration="1200">
-        
-    <div class="w-full text-center mb-24" data-aos="fade-up">
-        <h2 class="text-4xl font-bold text-textMain mb-2">Keahlian <span class="text-accent">Teknis</span></h2>
-        <div class="w-16 h-1 bg-accent mx-auto rounded-full mb-12"></div>
-        
-        <div class="marquee-container w-full">
-            <div class="marquee-content flex gap-8 whitespace-nowrap py-4"> 
-                    
-                    <span class="float-card w-40 h-40 glass-card rounded-3xl text-lg text-textMain font-bold border-2 border-accent/20 flex flex-col justify-center items-center gap-4 hover:!translate-y-[-10px] transition-transform relative top-4" 
-                          style="animation-delay: 0.0s;">
-                        <span class="text-6xl icon-wiggle text-accent" style="animation-delay: 0.0s;"><i class="devicon-linux-plain colored"></i></span>
-                        <span class="text-center">Linux</span>
-                    </span>
-                    
-                    <span class="float-card w-40 h-40 glass-card rounded-3xl text-lg text-textMain font-bold border-2 border-accent/20 flex flex-col justify-center items-center gap-4 hover:!translate-y-[-10px] transition-transform relative -top-4" 
-                          style="animation-delay: 0.1s;">
-                        <span class="text-6xl icon-wiggle text-accent" style="animation-delay: 0.1s;"><i class="devicon-python-plain colored"></i></span>
-                        <span class="text-center">Python</span>
-                    </span>
-                    
-                    <span class="float-card w-40 h-40 glass-card rounded-3xl text-lg text-textMain font-bold border-2 border-accent/20 flex flex-col justify-center items-center gap-4 hover:!translate-y-[-10px] transition-transform relative top-4" 
-                          style="animation-delay: 0.2s;">
-                        <span class="text-6xl icon-wiggle text-accent" style="animation-delay: 0.2s;"><i class="devicon-docker-plain colored"></i></span>
-                        <span class="text-center">Docker</span>
-                    </span>
-                    
-                    <span class="float-card w-40 h-40 glass-card rounded-3xl text-lg text-textMain font-bold border-2 border-accent/20 flex flex-col justify-center items-center gap-4 hover:!translate-y-[-10px] transition-transform relative -top-4" 
-                          style="animation-delay: 0.3s;">
-                        <span class="text-6xl icon-wiggle text-accent" style="animation-delay: 0.3s;"><i class="devicon-django-plain"></i></span>
-                        <span class="text-center">Django</span>
-                    </span>
-                    
-                    <span class="float-card w-40 h-40 glass-card rounded-3xl text-lg text-textMain font-bold border-2 border-accent/20 flex flex-col justify-center items-center gap-4 hover:!translate-y-[-10px] transition-transform relative top-4" 
-                          style="animation-delay: 0.4s;">
-                        <span class="text-6xl icon-wiggle text-accent" style="animation-delay: 0.4s;"><i class="devicon-cplusplus-plain colored"></i></span>
-                        <span class="text-center">C/C++</span>
-                    </span>
-                    
-                    <span class="float-card w-40 h-40 glass-card rounded-3xl text-lg text-textMain font-bold border-2 border-accent/20 flex flex-col justify-center items-center gap-4 hover:!translate-y-[-10px] transition-transform relative -top-4" 
-                          style="animation-delay: 0.5s;">
-                        <span class="text-6xl icon-wiggle text-accent" style="animation-delay: 0.5s;"><i class="devicon-go-original-wordmark colored"></i></span>
-                        <span class="text-center">Golang</span>
-                    </span>
-                    
-                    <span class="float-card w-40 h-40 glass-card rounded-3xl text-lg text-textMain font-bold border-2 border-accent/20 flex flex-col justify-center items-center gap-4 hover:!translate-y-[-10px] transition-transform relative top-4" 
-                          style="animation-delay: 0.6s;">
-                        <span class="text-6xl icon-wiggle text-accent" style="animation-delay: 0.6s;"><i class="devicon-arduino-plain colored"></i></span>
-                        <span class="text-center">Arduino IDE</span>
-                    </span>
-                    
-                    
-                    
-                    <span class="float-card w-40 h-40 glass-card rounded-3xl text-lg text-textMain font-bold border-2 border-accent/20 flex flex-col justify-center items-center gap-4 hover:!translate-y-[-10px] transition-transform relative top-4"
-                          style="animation-delay: 0.0s;">
-                        <span class="text-6xl icon-wiggle text-accent" style="animation-delay: 0.0s;"><i class="devicon-linux-plain colored"></i></span>
-                        <span class="text-center">Linux</span>
-                    </span>
-                    
-                    <span class="float-card w-40 h-40 glass-card rounded-3xl text-lg text-textMain font-bold border-2 border-accent/20 flex flex-col justify-center items-center gap-4 hover:!translate-y-[-10px] transition-transform relative -top-4"
-                          style="animation-delay: 0.1s;">
-                        <span class="text-6xl icon-wiggle text-accent" style="animation-delay: 0.1s;"><i class="devicon-python-plain colored"></i></span>
-                        <span class="text-center">Python</span>
-                    </span>
-                    
-                    <span class="float-card w-40 h-40 glass-card rounded-3xl text-lg text-textMain font-bold border-2 border-accent/20 flex flex-col justify-center items-center gap-4 hover:!translate-y-[-10px] transition-transform relative top-4"
-                          style="animation-delay: 0.2s;">
-                        <span class="text-6xl icon-wiggle text-accent" style="animation-delay: 0.2s;"><i class="devicon-docker-plain colored"></i></span>
-                        <span class="text-center">Docker</span>
-                    </span>
-                    
-                    <span class="float-card w-40 h-40 glass-card rounded-3xl text-lg text-textMain font-bold border-2 border-accent/20 flex flex-col justify-center items-center gap-4 hover:!translate-y-[-10px] transition-transform relative -top-4"
-                          style="animation-delay: 0.3s;">
-                        <span class="text-6xl icon-wiggle text-accent" style="animation-delay: 0.3s;"><i class="devicon-django-plain"></i></span>
-                        <span class="text-center">Django</span>
-                    </span>
-                    
-                    <span class="float-card w-40 h-40 glass-card rounded-3xl text-lg text-textMain font-bold border-2 border-accent/20 flex flex-col justify-center items-center gap-4 hover:!translate-y-[-10px] transition-transform relative top-4"
-                          style="animation-delay: 0.4s;">
-                        <span class="text-6xl icon-wiggle text-accent" style="animation-delay: 0.4s;"><i class="devicon-cplusplus-plain colored"></i></span>
-                        <span class="text-center">C/C++</span>
-                    </span>
-                    
-                    <span class="float-card w-40 h-40 glass-card rounded-3xl text-lg text-textMain font-bold border-2 border-accent/20 flex flex-col justify-center items-center gap-4 hover:!translate-y-[-10px] transition-transform relative -top-4"
-                          style="animation-delay: 0.5s;">
-                        <span class="text-6xl icon-wiggle text-accent" style="animation-delay: 0.5s;"><i class="devicon-go-original-wordmark colored"></i></span>
-                        <span class="text-center">Golang</span>
-                    </span>
-                    
-                    <span class="float-card w-40 h-40 glass-card rounded-3xl text-lg text-textMain font-bold border-2 border-accent/20 flex flex-col justify-center items-center gap-4 hover:!translate-y-[-10px] transition-transform relative top-4"
-                          style="animation-delay: 0.6s;">
-                        <span class="text-6xl icon-wiggle text-accent" style="animation-delay: 0.6s;"><i class="devicon-arduino-plain colored"></i></span>
-                        <span class="text-center">Arduino IDE</span>
-                    </span>
-                    
+        <section id="pendidikan" class="py-24 scroll-mt-24 bg-white/40 relative z-10 overflow-hidden" data-aos="fade-left" data-aos-duration="1200">
+        <div class="max-w-4xl mx-auto px-4">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl font-bold text-textMain mb-2">Riwayat <span class="text-accent">Pendidikan</span></h2>
+                <div class="w-16 h-1 bg-accent mx-auto rounded-full"></div>
+            </div>
+
+            <!-- Timeline Container -->
+            <div class="relative border-l-4 border-pink-200 ml-4 md:ml-8" data-aos="fade-up" data-aos-delay="200">
+                
+                <!-- Timeline Item 1 (Kuliah) -->
+                <div class="mb-10 ml-8 relative group">
+                    <span class="absolute -left-[42px] top-1.5 flex items-center justify-center w-8 h-8 rounded-full bg-white border-4 border-accent shadow-lg group-hover:scale-125 transition-transform duration-300"></span>
+                    <div class="glass-card rounded-2xl p-6 shadow-sm hover:shadow-lg hover:shadow-pink-200/50 transition-all duration-300 transform group-hover:-translate-y-1">
+                        <div class="flex flex-col md:flex-row md:items-center justify-between mb-2">
+                            <h3 class="text-xl font-bold text-textMain">Universitas Telkom</h3>
+                            <span class="text-accent font-semibold bg-white/60 px-3 py-1 rounded-full text-sm mt-2 md:mt-0 w-fit">2024 - Sekarang</span>
+                        </div>
+                        <h4 class="text-lg text-textMuted font-medium mb-3">S1 Teknologi Informasi</h4>
+                        <p class="text-textMuted leading-relaxed">
+                            Aktif dalam berbagai kegiatan akademik maupun non-akademik. Memiliki ketertarikan kuat di bidang teknologi informasi dan pengembangan perangkat lunak.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Timeline Item 2 (SMA/SMK) -->
+                <div class="mb-10 ml-8 relative group">
+                    <span class="absolute -left-[42px] top-1.5 flex items-center justify-center w-8 h-8 rounded-full bg-white border-4 border-pink-300 shadow-lg group-hover:scale-125 transition-transform duration-300"></span>
+                    <div class="glass-card rounded-2xl p-6 shadow-sm hover:shadow-lg hover:shadow-pink-200/50 transition-all duration-300 transform group-hover:-translate-y-1">
+                        <div class="flex flex-col md:flex-row md:items-center justify-between mb-2">
+                            <h3 class="text-xl font-bold text-textMain">SMAN 1 Indramayu</h3>
+                            <span class="text-pink-400 font-semibold bg-white/60 px-3 py-1 rounded-full text-sm mt-2 md:mt-0 w-fit">2021 - 2024</span>
+                        </div>
+                        <h4 class="text-lg text-textMuted font-medium mb-3">Jurusan MIPA</h4>
+                </div>
+
             </div>
         </div>
-    </div>
+    </section>
 
-    <div class="max-w-5xl mx-auto px-4 text-center" data-aos="fade-up">
+    
+<section id="keahlian" class="py-24 scroll-mt-24 relative z-10 overflow-hidden" data-aos="fade-up" data-aos-duration="1000">
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-gradient-to-r from-pink-300/20 to-blue-300/20 blur-3xl -z-10 rounded-full"></div>
+
+    <div class="w-full text-center mb-16">
+        <h2 class="text-4xl font-bold text-gray-800 mb-2">Keahlian <span class="text-pink-500">Teknis</span></h2>
+        <div class="w-16 h-1 bg-pink-500 mx-auto rounded-full mb-12"></div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto px-4">
+            
+            <div class="bg-white/60 backdrop-blur-lg border border-white/50 rounded-3xl p-8 relative group hover:-translate-y-2 transition-all duration-300 shadow-lg hover:shadow-2xl border-t-4 border-t-pink-400 flex flex-col items-center justify-center min-h-[200px]">
+                <h3 class="text-2xl font-bold text-gray-800 mb-8">Networking & SDN</h3>
+                
+                <div class="flex justify-center items-center gap-6">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-14 w-14 text-pink-500 group-hover:scale-110 transition-transform duration-300 drop-shadow-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" title="Network Architecture">
+                        <rect x="16" y="16" width="6" height="6" rx="1"></rect>
+                        <rect x="2" y="16" width="6" height="6" rx="1"></rect>
+                        <rect x="9" y="2" width="6" height="6" rx="1"></rect>
+                        <path d="M5 16v-3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v3"></path>
+                        <path d="M12 12V8"></path>
+                    </svg>
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linux/linux-original.svg" alt="Linux" class="h-14 w-auto group-hover:scale-110 transition-transform duration-300 drop-shadow-sm" title="Linux">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bash/bash-original.svg" alt="Terminal" class="h-14 w-auto group-hover:scale-110 transition-transform duration-300 drop-shadow-sm" title="Bash Scripting">
+                </div>
+            </div>
+
+            <div class="bg-white/60 backdrop-blur-lg border border-white/50 rounded-3xl p-8 relative group hover:-translate-y-2 transition-all duration-300 shadow-lg hover:shadow-2xl border-t-4 border-t-blue-400 flex flex-col items-center justify-center min-h-[200px]">
+                <h3 class="text-2xl font-bold text-gray-800 mb-8">System & DevOps</h3>
+                
+                <div class="flex justify-center items-center gap-6">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/ubuntu/ubuntu-plain-wordmark.svg" alt="Ubuntu Linux" class="h-14 w-auto group-hover:scale-110 transition-transform duration-300 drop-shadow-sm" title="Ubuntu">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg" alt="Docker" class="h-14 w-auto group-hover:scale-110 transition-transform duration-300 drop-shadow-sm" title="Docker">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vscode/vscode-original.svg" alt="VS Code" class="h-14 w-auto group-hover:scale-110 transition-transform duration-300 drop-shadow-sm" title="VS Code">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" alt="Git" class="h-14 w-auto group-hover:scale-110 transition-transform duration-300 drop-shadow-sm" title="Git">
+                </div>
+            </div>
+
+            <div class="bg-white/60 backdrop-blur-lg border border-white/50 rounded-3xl p-8 relative group hover:-translate-y-2 transition-all duration-300 shadow-lg hover:shadow-2xl border-t-4 border-t-purple-400 flex flex-col items-center justify-center min-h-[200px]">
+                <h3 class="text-2xl font-bold text-gray-800 mb-8">Programming & Backend</h3>
+                
+                <div class="flex justify-center items-center gap-6">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" alt="Python" class="h-14 w-auto group-hover:scale-110 transition-transform duration-300 drop-shadow-sm" title="Python">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/go/go-original-wordmark.svg" alt="Go" class="h-14 w-auto group-hover:scale-110 transition-transform duration-300 drop-shadow-sm" title="Go">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cplusplus/cplusplus-original.svg" alt="C++" class="h-14 w-auto group-hover:scale-110 transition-transform duration-300 drop-shadow-sm" title="C++">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/django/django-plain.svg" alt="Django" class="h-14 w-auto group-hover:scale-110 transition-transform duration-300 drop-shadow-sm" title="Django">
+                </div>
+            </div>
+
         </div>
+    </div>
 </section>
-        <section id="proyek" class="py-24 relative z-10" data-aos="zoom-in-up" data-aos-duration="1200">
+    
+    <section id="proyek" class="py-24 scroll-mt-24 relative z-10" data-aos="zoom-in-up" data-aos-duration="1200">
         <div class="max-w-6xl mx-auto px-4">
             <div class="text-center mb-16" data-aos="fade-up">
                 <h2 class="text-4xl font-bold text-textMain mb-2">Proyek <span class="text-accent">Unggulan</span></h2>
@@ -367,41 +370,62 @@ document.addEventListener("DOMContentLoaded", function() {
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 
-                <div class="glass-card rounded-2xl p-6" data-aos="fade-up" data-aos-delay="100">
-                    <div class="h-40 bg-pink-100/70 rounded-xl mb-6 flex items-center justify-center text-4xl">🌐</div>
-                    <h3 class="text-xl font-bold text-textMain mb-3">Final Project Network Development</h3>
-                    <p class="text-textMuted text-sm mb-4">Proyek pengembangan infrastruktur jaringan (NetDev) dengan fokus pada efisiensi dan implementasi protokol.</p>
-                    
+                <!-- Project 1 (SDN, Ryu, Mininet) -->
+                <div class="glass-card rounded-2xl p-6 relative group hover:-translate-y-2 transition-transform duration-300" data-aos="fade-up" data-aos-delay="100">
+                    <!-- Kita akan menggunakan kombinasi logo atau logo Ryu asli. Silakan simpan logo ryu.png di folder img -->
+                    <div class="h-40 bg-pink-100/70 rounded-xl mb-6 flex flex-col items-center justify-center gap-2 overflow-hidden p-2">
+                        <img src="/web-portofolio-withDjango/static/img/ryu.png" alt="Ryu Logo" class="h-14 w-auto group-hover:scale-110 transition-transform duration-300 object-contain" onerror="this.outerHTML='<span class=\'text-xs font-bold text-pink-400\'>[Silakan simpan ryu.png di folder img]</span>'">
+                        <img src="/web-portofolio-withDjango/static/img/mininet.png" alt="Mininet Logo" class="h-10 w-auto group-hover:scale-110 transition-transform duration-300 object-contain" onerror="this.outerHTML='<span class=\'text-xs font-bold text-pink-400\'>[Silakan simpan mininet.png di folder img]</span>'">
+                    </div>
+                    <span class="text-xs font-bold text-pink-500 bg-pink-100 px-2 py-1 rounded-full mb-3 inline-block">Network/SDN</span>
+                    <h3 class="text-xl font-bold text-textMain mb-3">Implementasi SDN (Ryu & Mininet)</h3>
+                    <p class="text-textMuted text-sm mb-4">Simulasi dan implementasi Software Defined Networking (SDN) menggunakan arsitektur controller Ryu dan Mininet untuk mengelola topologi jaringan.</p>
+                    <a href="https://hackmd.io/@pw69oc8DQC24u8J4Fwx-fQ/B19w99VJzl" target="_blank" class="inline-flex items-center gap-2 text-accent font-semibold hover:text-pink-600 transition-colors">
+                        <i class="devicon-github-original"></i> Lihat Dokumentasi
+                    </a>
+                </div>
+
+                <!-- Project 2 (Django & Docker) -->
+                <div class="glass-card rounded-2xl p-6 relative group hover:-translate-y-2 transition-transform duration-300" data-aos="fade-up" data-aos-delay="200">
+                    <div class="h-40 bg-blue-100/70 rounded-xl mb-6 flex items-center justify-center gap-4 overflow-hidden p-4">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/django/django-plain.svg" alt="Django Logo" class="h-16 w-auto group-hover:scale-110 transition-transform duration-300 drop-shadow-md">
+                    </div>
+                    <span class="text-xs font-bold text-blue-500 bg-blue-100 px-2 py-1 rounded-full mb-3 inline-block">Backend/Monitoring</span>
+                    <h3 class="text-xl font-bold text-textMain mb-3">Website Monitoring Jaringan</h3>
+                    <p class="text-textMuted text-sm mb-4">Membangun sistem monitoring jaringan berbasis website menggunakan framework Django yang diintegrasikan dengan environment Docker.</p>
                     <a href="https://github.com/shrlyza22/Final-Project-Netdev.git" target="_blank" class="inline-flex items-center gap-2 text-accent font-semibold hover:text-pink-600 transition-colors">
                         <i class="devicon-github-original"></i> Lihat Source Code
                     </a>
-                    
                 </div>
-                
-                <div class="glass-card rounded-2xl p-6" data-aos="fade-up" data-aos-delay="100">
-                    <div class="h-40 bg-pink-100/70 rounded-xl mb-6 flex items-center justify-center text-4xl">🖥️</div>
-                    <h3 class="text-xl font-bold text-textMain mb-3">Simulasi SDN dengan Mininet &amp; Ryu</h3>
-                    <p class="text-textMuted text-sm mb-4">Membangun dan menganalisis arsitektur Software-Defined Networking (SDN) menggunakan emulator Mininet dan Ryu Controller.</p>
-                    
-                </div>
-                
-                <div class="glass-card rounded-2xl p-6" data-aos="fade-up" data-aos-delay="100">
-                    <div class="h-40 bg-pink-100/70 rounded-xl mb-6 flex items-center justify-center text-4xl">🤖</div>
-                    <h3 class="text-xl font-bold text-textMain mb-3">Arduino Uno Embedded Systems</h3>
-                    <p class="text-textMuted text-sm mb-4">Kumpulan implementasi proyek mikrokontroler menggunakan Arduino Uno, menjembatani hardware dan logic programming.</p>
-                    
-                    <a href="https://github.com/shrlyza22/arduino-uno-projects.git" target="_blank" class="inline-flex items-center gap-2 text-accent font-semibold hover:text-pink-600 transition-colors">
-                        <i class="devicon-github-original"></i> Lihat Source Code
+
+                <!-- Project 3 (Docker) -->
+                <div class="glass-card rounded-2xl p-6 relative group hover:-translate-y-2 transition-transform duration-300" data-aos="fade-up" data-aos-delay="300">
+                    <div class="h-40 bg-purple-100/70 rounded-xl mb-6 flex items-center justify-center overflow-hidden p-4">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg" alt="Docker Logo" class="h-24 w-auto group-hover:scale-110 transition-transform duration-300 drop-shadow-md">
+                    </div>
+                    <span class="text-xs font-bold text-purple-500 bg-purple-100 px-2 py-1 rounded-full mb-3 inline-block">DevOps/Containerization</span>
+                    <h3 class="text-xl font-bold text-textMain mb-3">Learning Containerization</h3>
+                    <p class="text-textMuted text-sm mb-4">Dokumentasi komprehensif mengenai perjalanan belajar Docker dan arsitektur Django, dicatat secara mendetail menggunakan HackMD.</p>
+                    <a href="https://hackmd.io/@shrlyza22/ByO8lBqUWg" target="_blank" class="inline-flex items-center gap-2 text-accent font-semibold hover:text-pink-600 transition-colors">
+                        <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M21.231 2.378a.656.656 0 0 0-.648-.204l-18 4.5a.656.656 0 0 0-.214 1.189l4.5 2.25 10.428-9.475a.328.328 0 0 1 .494.432l-9.356 10.741v4.717a.656.656 0 0 0 1.106.474l2.87-2.738 4.887 2.443a.656.656 0 0 0 .918-.415l4.5-13.5a.656.656 0 0 0-.485-.814z"/></svg>
+                        Lihat Dokumentasi
                     </a>
-                    
                 </div>
-                
+
+            </div>
+
+            <!-- CTA Button Portofolio PDF -->
+            <div class="mt-16 text-center" data-aos="fade-up" data-aos-delay="400">
+                <a href="#" target="_blank" class="btn-shimmer inline-flex items-center justify-center gap-3 bg-accent text-white font-bold text-lg py-4 px-10 rounded-full shadow-xl hover:shadow-pink-400/50 transition-all duration-300 transform hover:-translate-y-2">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+                    Lihat Portofolio Lengkap (PDF)
+                </a>
             </div>
         </div>
     </section>
-        <section id="kontak" class="py-24 bg-white/40 relative z-10" data-aos="flip-up" data-aos-duration="1200">
+        <section id="kontak" class="py-24 scroll-mt-24 bg-white/40 relative z-10" data-aos="flip-up" data-aos-duration="1200">
         <div class="max-w-3xl mx-auto px-4 text-center" data-aos="fade-up">
-            <h2 class="text-4xl font-bold text-textMain mb-2">Let's Connect <span class="text-accent">With Me</span></h2>
+            <h2 class="text-4xl font-bold text-textMain mb-2">Mari Terhubung<span class="text-accent"> Denganku!</span></h2>
             <div class="w-16 h-1 bg-accent mx-auto rounded-full mb-8"></div>
             <div class="glass-card rounded-3xl p-10">
                 <p class="text-textMuted text-lg mb-8">Tertarik untuk kolaborasi atau ada pertanyaan soal proyekku? Jangan ragu buat sapa aku ya!</p>

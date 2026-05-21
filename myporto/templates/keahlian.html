@@ -1,30 +1,51 @@
-<section id="keahlian" class="py-24 bg-white/40 relative z-10 overflow-hidden" data-aos="fade-right" data-aos-duration="1200">
+{% load static %}
+<section id="keahlian" class="py-24 scroll-mt-24 relative z-10 overflow-hidden" data-aos="fade-up" data-aos-duration="1000">
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-gradient-to-r from-pink-300/20 to-blue-300/20 blur-3xl -z-10 rounded-full"></div>
+
+    <div class="w-full text-center mb-16">
+        <h2 class="text-4xl font-bold text-gray-800 mb-2">Keahlian <span class="text-pink-500">Teknis</span></h2>
+        <div class="w-16 h-1 bg-pink-500 mx-auto rounded-full mb-12"></div>
         
-    <div class="w-full text-center mb-24" data-aos="fade-up">
-        <h2 class="text-4xl font-bold text-textMain mb-2">Keahlian <span class="text-accent">Teknis</span></h2>
-        <div class="w-16 h-1 bg-accent mx-auto rounded-full mb-12"></div>
-        
-        <div class="marquee-container w-full">
-            <div class="marquee-content flex gap-8 whitespace-nowrap py-4"> 
-                    {% for skill in skills %}
-                    <span class="float-card w-40 h-40 glass-card rounded-3xl text-lg text-textMain font-bold border-2 border-accent/20 flex flex-col justify-center items-center gap-4 hover:!translate-y-[-10px] transition-transform relative {% if forloop.counter|divisibleby:2 %}-top-4{% else %}top-4{% endif %}" 
-                          style="animation-delay: 0.{{ forloop.counter0 }}s;">
-                        <span class="text-6xl icon-wiggle text-accent" style="animation-delay: 0.{{ forloop.counter0 }}s;"><i class="{{ skill.icon }}"></i></span>
-                        <span class="text-center">{{ skill.name }}</span>
-                    </span>
-                    {% endfor %}
-                    
-                    {% for skill in skills %}
-                    <span class="float-card w-40 h-40 glass-card rounded-3xl text-lg text-textMain font-bold border-2 border-accent/20 flex flex-col justify-center items-center gap-4 hover:!translate-y-[-10px] transition-transform relative {% if forloop.counter|divisibleby:2 %}-top-4{% else %}top-4{% endif %}"
-                          style="animation-delay: 0.{{ forloop.counter0 }}s;">
-                        <span class="text-6xl icon-wiggle text-accent" style="animation-delay: 0.{{ forloop.counter0 }}s;"><i class="{{ skill.icon }}"></i></span>
-                        <span class="text-center">{{ skill.name }}</span>
-                    </span>
-                    {% endfor %}
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto px-4">
+            
+            <div class="bg-white/60 backdrop-blur-lg border border-white/50 rounded-3xl p-8 relative group hover:-translate-y-2 transition-all duration-300 shadow-lg hover:shadow-2xl border-t-4 border-t-pink-400 flex flex-col items-center justify-center min-h-[200px]">
+                <h3 class="text-2xl font-bold text-gray-800 mb-8">Networking & SDN</h3>
+                
+                <div class="flex justify-center items-center gap-6">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-14 w-14 text-pink-500 group-hover:scale-110 transition-transform duration-300 drop-shadow-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" title="Network Architecture">
+                        <rect x="16" y="16" width="6" height="6" rx="1"></rect>
+                        <rect x="2" y="16" width="6" height="6" rx="1"></rect>
+                        <rect x="9" y="2" width="6" height="6" rx="1"></rect>
+                        <path d="M5 16v-3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v3"></path>
+                        <path d="M12 12V8"></path>
+                    </svg>
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linux/linux-original.svg" alt="Linux" class="h-14 w-auto group-hover:scale-110 transition-transform duration-300 drop-shadow-sm" title="Linux">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bash/bash-original.svg" alt="Terminal" class="h-14 w-auto group-hover:scale-110 transition-transform duration-300 drop-shadow-sm" title="Bash Scripting">
+                </div>
             </div>
+
+            <div class="bg-white/60 backdrop-blur-lg border border-white/50 rounded-3xl p-8 relative group hover:-translate-y-2 transition-all duration-300 shadow-lg hover:shadow-2xl border-t-4 border-t-blue-400 flex flex-col items-center justify-center min-h-[200px]">
+                <h3 class="text-2xl font-bold text-gray-800 mb-8">System & DevOps</h3>
+                
+                <div class="flex justify-center items-center gap-6">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/ubuntu/ubuntu-plain-wordmark.svg" alt="Ubuntu Linux" class="h-14 w-auto group-hover:scale-110 transition-transform duration-300 drop-shadow-sm" title="Ubuntu">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg" alt="Docker" class="h-14 w-auto group-hover:scale-110 transition-transform duration-300 drop-shadow-sm" title="Docker">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vscode/vscode-original.svg" alt="VS Code" class="h-14 w-auto group-hover:scale-110 transition-transform duration-300 drop-shadow-sm" title="VS Code">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" alt="Git" class="h-14 w-auto group-hover:scale-110 transition-transform duration-300 drop-shadow-sm" title="Git">
+                </div>
+            </div>
+
+            <div class="bg-white/60 backdrop-blur-lg border border-white/50 rounded-3xl p-8 relative group hover:-translate-y-2 transition-all duration-300 shadow-lg hover:shadow-2xl border-t-4 border-t-purple-400 flex flex-col items-center justify-center min-h-[200px]">
+                <h3 class="text-2xl font-bold text-gray-800 mb-8">Programming & Backend</h3>
+                
+                <div class="flex justify-center items-center gap-6">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" alt="Python" class="h-14 w-auto group-hover:scale-110 transition-transform duration-300 drop-shadow-sm" title="Python">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/go/go-original-wordmark.svg" alt="Go" class="h-14 w-auto group-hover:scale-110 transition-transform duration-300 drop-shadow-sm" title="Go">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cplusplus/cplusplus-original.svg" alt="C++" class="h-14 w-auto group-hover:scale-110 transition-transform duration-300 drop-shadow-sm" title="C++">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/django/django-plain.svg" alt="Django" class="h-14 w-auto group-hover:scale-110 transition-transform duration-300 drop-shadow-sm" title="Django">
+                </div>
+            </div>
+
         </div>
     </div>
-
-    <div class="max-w-5xl mx-auto px-4 text-center" data-aos="fade-up">
-        </div>
 </section>

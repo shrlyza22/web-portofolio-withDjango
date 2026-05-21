@@ -1,4 +1,5 @@
-    <section id="proyek" class="py-24 relative z-10" data-aos="zoom-in-up" data-aos-duration="1200">
+{% load static %}
+    <section id="proyek" class="py-24 scroll-mt-24 relative z-10" data-aos="zoom-in-up" data-aos-duration="1200">
         <div class="max-w-6xl mx-auto px-4">
             <div class="text-center mb-16" data-aos="fade-up">
                 <h2 class="text-4xl font-bold text-textMain mb-2">Proyek <span class="text-accent">Unggulan</span></h2>
@@ -6,18 +7,57 @@
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                {% for project in projects %}
-                <div class="glass-card rounded-2xl p-6" data-aos="fade-up" data-aos-delay="100">
-                    <div class="h-40 bg-pink-100/70 rounded-xl mb-6 flex items-center justify-center text-4xl">{{ project.icon }}</div>
-                    <h3 class="text-xl font-bold text-textMain mb-3">{{ project.title }}</h3>
-                    <p class="text-textMuted text-sm mb-4">{{ project.description }}</p>
-                    {% if project.repo_link %}
-                    <a href="{{ project.repo_link }}" target="_blank" class="inline-flex items-center gap-2 text-accent font-semibold hover:text-pink-600 transition-colors">
+                
+                <!-- Project 1 (SDN, Ryu, Mininet) -->
+                <div class="glass-card rounded-2xl p-6 relative group hover:-translate-y-2 transition-transform duration-300" data-aos="fade-up" data-aos-delay="100">
+                    <!-- Kita akan menggunakan kombinasi logo atau logo Ryu asli. Silakan simpan logo ryu.png di folder img -->
+                    <div class="h-40 bg-pink-100/70 rounded-xl mb-6 flex flex-col items-center justify-center gap-2 overflow-hidden p-2">
+                        <img src="{% static 'img/ryu.png' %}" alt="Ryu Logo" class="h-14 w-auto group-hover:scale-110 transition-transform duration-300 object-contain" onerror="this.outerHTML='<span class=\'text-xs font-bold text-pink-400\'>[Silakan simpan ryu.png di folder img]</span>'">
+                        <img src="{% static 'img/mininet.png' %}" alt="Mininet Logo" class="h-10 w-auto group-hover:scale-110 transition-transform duration-300 object-contain" onerror="this.outerHTML='<span class=\'text-xs font-bold text-pink-400\'>[Silakan simpan mininet.png di folder img]</span>'">
+                    </div>
+                    <span class="text-xs font-bold text-pink-500 bg-pink-100 px-2 py-1 rounded-full mb-3 inline-block">Network/SDN</span>
+                    <h3 class="text-xl font-bold text-textMain mb-3">Implementasi SDN (Ryu & Mininet)</h3>
+                    <p class="text-textMuted text-sm mb-4">Simulasi dan implementasi Software Defined Networking (SDN) menggunakan arsitektur controller Ryu dan Mininet untuk mengelola topologi jaringan.</p>
+                    <a href="https://hackmd.io/@pw69oc8DQC24u8J4Fwx-fQ/B19w99VJzl" target="_blank" class="inline-flex items-center gap-2 text-accent font-semibold hover:text-pink-600 transition-colors">
+                        <i class="devicon-github-original"></i> Lihat Dokumentasi
+                    </a>
+                </div>
+
+                <!-- Project 2 (Django & Docker) -->
+                <div class="glass-card rounded-2xl p-6 relative group hover:-translate-y-2 transition-transform duration-300" data-aos="fade-up" data-aos-delay="200">
+                    <div class="h-40 bg-blue-100/70 rounded-xl mb-6 flex items-center justify-center gap-4 overflow-hidden p-4">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/django/django-plain.svg" alt="Django Logo" class="h-16 w-auto group-hover:scale-110 transition-transform duration-300 drop-shadow-md">
+                    </div>
+                    <span class="text-xs font-bold text-blue-500 bg-blue-100 px-2 py-1 rounded-full mb-3 inline-block">Backend/Monitoring</span>
+                    <h3 class="text-xl font-bold text-textMain mb-3">Website Monitoring Jaringan</h3>
+                    <p class="text-textMuted text-sm mb-4">Membangun sistem monitoring jaringan berbasis website menggunakan framework Django yang diintegrasikan dengan environment Docker.</p>
+                    <a href="https://github.com/shrlyza22/Final-Project-Netdev.git" target="_blank" class="inline-flex items-center gap-2 text-accent font-semibold hover:text-pink-600 transition-colors">
                         <i class="devicon-github-original"></i> Lihat Source Code
                     </a>
-                    {% endif %}
                 </div>
-                {% endfor %}
+
+                <!-- Project 3 (Docker) -->
+                <div class="glass-card rounded-2xl p-6 relative group hover:-translate-y-2 transition-transform duration-300" data-aos="fade-up" data-aos-delay="300">
+                    <div class="h-40 bg-purple-100/70 rounded-xl mb-6 flex items-center justify-center overflow-hidden p-4">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg" alt="Docker Logo" class="h-24 w-auto group-hover:scale-110 transition-transform duration-300 drop-shadow-md">
+                    </div>
+                    <span class="text-xs font-bold text-purple-500 bg-purple-100 px-2 py-1 rounded-full mb-3 inline-block">DevOps/Containerization</span>
+                    <h3 class="text-xl font-bold text-textMain mb-3">Learning Containerization</h3>
+                    <p class="text-textMuted text-sm mb-4">Dokumentasi komprehensif mengenai perjalanan belajar Docker dan arsitektur Django, dicatat secara mendetail menggunakan HackMD.</p>
+                    <a href="https://hackmd.io/@shrlyza22/ByO8lBqUWg" target="_blank" class="inline-flex items-center gap-2 text-accent font-semibold hover:text-pink-600 transition-colors">
+                        <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M21.231 2.378a.656.656 0 0 0-.648-.204l-18 4.5a.656.656 0 0 0-.214 1.189l4.5 2.25 10.428-9.475a.328.328 0 0 1 .494.432l-9.356 10.741v4.717a.656.656 0 0 0 1.106.474l2.87-2.738 4.887 2.443a.656.656 0 0 0 .918-.415l4.5-13.5a.656.656 0 0 0-.485-.814z"/></svg>
+                        Lihat Dokumentasi
+                    </a>
+                </div>
+
+            </div>
+
+            <!-- CTA Button Portofolio PDF -->
+            <div class="mt-16 text-center" data-aos="fade-up" data-aos-delay="400">
+                <a href="#" target="_blank" class="btn-shimmer inline-flex items-center justify-center gap-3 bg-accent text-white font-bold text-lg py-4 px-10 rounded-full shadow-xl hover:shadow-pink-400/50 transition-all duration-300 transform hover:-translate-y-2">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+                    Lihat Portofolio Lengkap (PDF)
+                </a>
             </div>
         </div>
     </section>
