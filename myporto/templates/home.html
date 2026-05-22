@@ -80,12 +80,12 @@ document.addEventListener("DOMContentLoaded", function() {
             index++;
             setTimeout(typeWriter, 100);
         } else {
-            // Hilangkan kursor berkedip setelah selesai
+            
             setTimeout(() => {
                 element.classList.remove("border-r-2", "border-accent", "animate-pulse");
             }, 2000);
         }
     }
-    setTimeout(typeWriter, 500); // Jeda sebelum mulai ngetik
+    setTimeout(typeWriter, 500); 
 });
 </script>

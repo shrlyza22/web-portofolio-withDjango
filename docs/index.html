@@ -178,13 +178,13 @@ document.addEventListener("DOMContentLoaded", function() {
             index++;
             setTimeout(typeWriter, 100);
         } else {
-            // Hilangkan kursor berkedip setelah selesai
+            
             setTimeout(() => {
                 element.classList.remove("border-r-2", "border-accent", "animate-pulse");
             }, 2000);
         }
     }
-    setTimeout(typeWriter, 500); // Jeda sebelum mulai ngetik
+    setTimeout(typeWriter, 500); 
 });
 </script>
     
@@ -288,9 +288,6 @@ document.addEventListener("DOMContentLoaded", function() {
                             <span class="text-accent font-semibold bg-white/60 px-3 py-1 rounded-full text-sm mt-2 md:mt-0 w-fit">2024 - Sekarang</span>
                         </div>
                         <h4 class="text-lg text-textMuted font-medium mb-3">S1 Teknologi Informasi</h4>
-                        <p class="text-textMuted leading-relaxed">
-                            Aktif dalam berbagai kegiatan akademik maupun non-akademik. Memiliki ketertarikan kuat di bidang teknologi informasi dan pengembangan perangkat lunak.
-                        </p>
                     </div>
                 </div>
 
@@ -417,7 +414,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
             <!-- CTA Button Portofolio PDF -->
             <div class="mt-16 text-center" data-aos="fade-up" data-aos-delay="400">
-                <a href="#" target="_blank" class="btn-shimmer inline-flex items-center justify-center gap-3 bg-accent text-white font-bold text-lg py-4 px-10 rounded-full shadow-xl hover:shadow-pink-400/50 transition-all duration-300 transform hover:-translate-y-2">
+                <a href="/web-portofolio-withDjango/static/assets/portopdf.pdf" target="_blank" class="btn-shimmer inline-flex items-center justify-center gap-3 bg-accent text-white font-bold text-lg py-4 px-10 rounded-full shadow-xl hover:shadow-pink-400/50 transition-all duration-300 transform hover:-translate-y-2">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
                     Lihat Portofolio Lengkap (PDF)
                 </a>
